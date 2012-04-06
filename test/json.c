@@ -47,6 +47,8 @@ file_read(const char *filename) {
 
 int
 main(int argc, const char **argv){
+  puts("");
+
   test("valid json", {
     char *tobi = file_read("test/fixtures/tobi.json");
     json_value *ret = json_parse(tobi);
@@ -59,5 +61,7 @@ main(int argc, const char **argv){
     assert(!ret);
   });
 
+  puts("");
+  
   return 0;
 }
