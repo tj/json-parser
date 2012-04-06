@@ -1,12 +1,12 @@
 
 //
-// hash.h
+// object.h
 //
 // Copyright (c) 2012 TJ Holowaychuk <tj@vision-media.ca>
 //
 
-#ifndef ZERODB_HASH
-#define ZERODB_HASH
+#ifndef JSON_OBJECT_HASH
+#define JSON_OBJECT_HASH
 
 #include "khash.h"
 
@@ -94,4 +94,4 @@ json_object_has(khash_t(value) *self, char *key);
 void
 json_object_remove(khash_t(value) *self, char *key);
 
-#endif /* ZERODB_HASH */
+#endif /* JSON_OBJECT_HASH */
