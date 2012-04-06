@@ -42,6 +42,11 @@ file_read(const char *filename) {
 int
 main(int argc, const char **argv){
   char *tobi = file_read("test/fixtures/tobi.json");
-  printf("%s\n", tobi);
+  json_value *ret = json_parse(tobi);
+  assert(ret);
+
+  char *invalid = file_read("test/fixtures/invalid.json");
+  ret = json_parse(invalid);
+  assert(!ret);
   return 0;
 }
