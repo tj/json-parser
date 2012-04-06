@@ -39,14 +39,25 @@ file_read(const char *filename) {
   return buf;
 }
 
+#define test(label, block) { \
+    printf("  \e[90m- %s\e[m ", label); \
+    block; \
+    printf("\e[32mok\e[m\n"); \
+  }
+
 int
 main(int argc, const char **argv){
-  char *tobi = file_read("test/fixtures/tobi.json");
-  json_value *ret = json_parse(tobi);
-  assert(ret);
+  test("valid json", {
+    char *tobi = file_read("test/fixtures/tobi.json");
+    json_value *ret = json_parse(tobi);
+    assert(ret);
+  });
 
-  char *invalid = file_read("test/fixtures/invalid.json");
-  ret = json_parse(invalid);
-  assert(!ret);
+  test("invalid json", {
+    char *tobi = file_read("test/fixtures/invalid.json");
+    json_value *ret = json_parse(tobi);
+    assert(!ret);
+  });
+
   return 0;
 }
