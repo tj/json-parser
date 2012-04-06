@@ -17,4 +17,4 @@ clean:
 	rm -f $(OBJ)
 	rm test-json
 
-.PHONY: clean
+.PHONY: clean test
