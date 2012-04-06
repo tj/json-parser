@@ -29,6 +29,7 @@
  */
 
 #include "json.h"
+#include "object.h"
 
 #ifdef _MSC_VER
    #ifndef _CRT_SECURE_NO_WARNINGS
